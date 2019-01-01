@@ -28,5 +28,5 @@ docker logs -f bsvd-node
 
 Auto Installation
 ```
-sudo bash -c "$(curl -L https://git.io/fhtbh)"
+sudo bash -c "$(curl -L https://git.io/fhtN1)"
 ```
