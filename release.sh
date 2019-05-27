@@ -20,7 +20,7 @@ github-release upload \
     --repo docker-bitcoinsv \
     --tag v$VERSION \
     --name "bsv_install.sh" \
-    --file bsv_utils.sh
+    --file bsv_install.sh
 
 github-release upload \
     --user bitslercasino \
