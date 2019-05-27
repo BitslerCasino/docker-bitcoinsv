@@ -20,7 +20,7 @@ RUN chmod +x /usr/local/bin/bsv_oneshot
 
 VOLUME ["/bitcoinsv"]
 
-EXPOSE 8432 8433
+EXPOSE 8932 8933
 
 WORKDIR /bitcoinsv
 

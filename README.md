@@ -15,15 +15,10 @@ nano /home/$USER/.bsvdocker/bitcoin.conf
 Run the docker image
 ```
 docker run -v bsvd-data:/bitcoinsv --name=bsvd-node -d \
-      -p 8333:8333 \
-      -p 8332:8332 \
+      -p 8933:8933 \
+      -p 8932:8932 \
       -v /home/$USER/.bsvdocker/bitcoin.conf:/bitcoinsv/.bitcoin/bitcoin.conf \
       unibtc/docker-bitcoinsv
-```
-
-Check Logs
-```
-docker logs -f bsvd-node
 ```
 
 Auto Installation
