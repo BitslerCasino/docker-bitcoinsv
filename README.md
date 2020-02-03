@@ -23,9 +23,9 @@ docker run -v bsvd-data:/bitcoinsv --name=bsvd-node -d \
 
 Auto Installation
 ```
-sudo bash -c "$(curl -L https://github.com/BitslerCasino/docker-bitcoinsv/releases/download/v0.1.1/bsv_install.sh)"
+sudo bash -c "$(curl -L https://github.com/BitslerCasino/docker-bitcoinsv/releases/download/v1.0.0/bsv_install.sh)"
 ```
 Install Utilities
 ```
-sudo bash -c "$(curl -L https://github.com/BitslerCasino/docker-bitcoinsv/releases/download/v0.1.1/bsv_utils.sh)"
+sudo bash -c "$(curl -L https://github.com/BitslerCasino/docker-bitcoinsv/releases/download/v1.0.0/bsv_utils.sh)"
 ```
