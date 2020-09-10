@@ -1,0 +1,33 @@
+name: Docker Image CI
+
+on:
+  push:
+    branches: [ master ]
+
+jobs:
+
+  build:
+
+    runs-on: ubuntu-latest
+    if: github.event_name == 'push'
+
+    steps:
+    - uses: actions/checkout@v2
+
+    - name: Build the Docker image
+      run: docker build . --file Dockerfile --build-arg version=$(cat VERSION) --tag bitsler/docker-bitcoinsv:$(cat VERSION) --tag bitsler/docker-bitcoinsv:latest
+    
+    - name: Build the Docker Testnet image
+      run: |
+          cp Dockerfile DockerfileTest
+          sed -i 's/8932 8933/18932 18933/g' DockerfileTest
+          docker build . --file DockerfileTest --build-arg version=$(cat VERSION) --tag bitsler/docker-bitcoinsvtest:$(cat VERSION)
+    
+    - name: Log into registry
+      run: echo "${{ secrets.HUB_TOKEN }}" | docker login -u ${{ secrets.HUB_USERNAME }} --password-stdin
+
+    - name: Push image
+      run: |
+          docker push bitsler/docker-bitcoinsv:$(cat VERSION)
+          docker push bitsler/docker-bitcoinsv:latest 
+          docker push bitsler/docker-bitcoinsvtest:$(cat VERSION)
